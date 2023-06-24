@@ -1,61 +1,34 @@
 <template>
     <ion-page>
-        <ion-header
-            :translucent="true">
+        <ion-header :translucent="true">
             <ion-toolbar>
-                <ion-buttons
-                    slot="start">
-                    <ion-back-button
-                        defaultHref="/tabs/tab1"/>
-                    <ion-menu-button
-                        color="primary"></ion-menu-button>
+                <ion-buttons slot="start">
+                    <ion-back-button text="Back" defaultHref="/tabs/tab1" />
+                    <ion-menu-button color="primary"></ion-menu-button>
                 </ion-buttons>
-                <ion-title>
-                    {{
-                        route.path
-                    }}
-                </ion-title>
+                <ion-title> Route path = {{ route.path }} </ion-title>
             </ion-toolbar>
         </ion-header>
 
-        <ion-content
-            :fullscreen="true">
-            <div
-                id="container">
-                <strong
-                    class="capitalize">{{
-                        componentName
-                    }}</strong>
+        <ion-content :fullscreen="true">
+            <div id="container">
+                <strong class="capitalize">{{ componentName }}</strong>
             </div>
         </ion-content>
     </ion-page>
 </template>
 
-<script
-    setup
-    lang="ts">
-import {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonBackButton
-} from '@ionic/vue';
-import ExploreContainer
-    from '@/components/ExploreContainer.vue';
-import {
-    useRoute,
-    useRouter
-} from "vue-router";
+<script setup lang="ts">
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonBackButton } from "@ionic/vue";
+import ExploreContainer from "@/components/ExploreContainer.vue";
+import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
 const componentName = "Child1";
 </script>
 
-<style
-    scoped>
+<style scoped>
 #container {
     text-align: center;
     position: absolute;

@@ -5,7 +5,7 @@
                 <ion-buttons slot="start">
                     <ion-menu-button color="primary"></ion-menu-button>
                 </ion-buttons>
-                <ion-title>{{ route.path }}</ion-title>
+                <ion-title> Route path = {{ route.path }} </ion-title>
             </ion-toolbar>
         </ion-header>
 
